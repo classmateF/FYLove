@@ -1,0 +1,81 @@
+<%- include('../common/header.ejs',{select:'4',title:"群组 新版"}) %>
+
+<%- comboCss.css("/static/css/group/km-group.css").done() %>
+
+<div class="container">
+    <div class="km-group-head">
+        <img src="/static/images/knowledge/knowlogo.jpg" href="#" />
+    </div>
+    <div class="km-group-body">
+        <div class="km-group-body-left">
+            <div class="km-group-body-left-top">
+                <ul>
+                    <li><a id="mine" class="cur">我的</a></li>
+                    <li><a id="all">全部</a></li>
+                </ul>
+                <a href="/groupNew/launchvote" class="intTopic" target="_blank">发起话题</a><!--发起话题-->
+            </div>
+            <div class="km-group-body-left-mine">
+                <div class="neworhot">
+                    <ul>
+                        <li><a href="#">最新话题</a></li>
+                        <li><a href="#">热门话题</a></li>
+                    </ul>
+                </div>
+                <div id="groupList">
+
+                </div>
+            </div>
+            <div class="page fn-clearfix" id="page">
+                <!--$("#page").html("...")-->
+            </div>
+        </div>
+        <div class="km-group-body-right">
+            <div class="km-group-body-right-mygroup">
+                <h3 class="head">我的群组</h3>
+                <a class="makegroup">创建群组</a>
+                <div class="km-group-body-right-mygroupbody">
+                    <img src="/static/images/index/avatar1.png"/>
+                    <ul>
+                        <li><a href="/groupNew/topiclist">天龙八部3D玩家交流群</a></li>
+                        <li>天龙八部3D玩家心得交流群</li>
+                    </ul>
+                </div>
+                <a class="more" href="#">更多&gt;&gt;</a>
+            </div>
+            <div class="km-group-body-right-groups">
+                <h3 class="head">群组分类</h3>
+                <ul>
+                    <li><a href="#">部门工作群</a></li>
+                    <li><a href="#">专业交流群</a></li>
+                    <li><a href="#">项目工作群</a></li>
+                    <li><a href="#">娱乐生活群</a></li>
+                </ul>
+            </div>
+            <div class="km-group-body-right-newANDhot">
+                <ul>
+                    <li><a id="new" class="cur">最新群组</a></li>
+                    <li><a id="hot">热门群组</a></li>
+                </ul>
+                <div class="km-group-body-right-newANDhot-new">
+                    <img src="/static/images/index/avatar1.png"/>
+                    <a href="#">游戏合伙人训练营</a>
+                    <p>创建者：<span>齐丽</span></p>
+                    <p>2016.12.27 18:30</p>
+                    <p>游戏合伙人训练营小伙伴互相交流</p>
+                </div>
+                <!-- <div class="km-group-body-right-newANDhot-hot">
+                    <img src="#"/>
+                    <a href="#">合伙人训练营</a>
+                    <p>创建者：<span>齐丽</span></p>
+                    <p>2016.12.27 18:30</p>
+                    <p>游戏合伙人训练营小伙伴互相交流</p>
+                </div> -->
+                <a class="more" href="#">更多&gt;&gt;</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>seajs.use('/static/js/group/groupIndex.js');</script>
+
+
