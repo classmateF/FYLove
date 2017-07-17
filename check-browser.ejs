@@ -1,0 +1,63 @@
+<style>
+    #browser-tip,#browser-tip2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fcf8e3;
+        border-color: #faebcc;
+        color: #8a6d3b;
+        text-align: center;
+        padding: 10px 0;
+        z-index: 9999;
+        display: none;
+    }
+    #browser-tip a,#browser-tip2 a {
+        color: #2873bf;
+        padding: 0 3px;
+    }
+    #close-browser-tip,#close-browser-tip2{
+        position: absolute;
+        top: 3px;
+        right: 8px;
+        font-size: 18px;
+    }
+</style>
+<div id="browser-tip">
+    啊哦~您浏览器过时了，可能会导致有些功能无法正常使用，为了您更好的浏览体验，请使用史上最强的<a title="点击下载最新浏览器" href="/static/chrome_installer.exe">浏览器</a>，或者第二强的<a title="IE9-64bit" href="/static/IE9-Windows7-64bit.exe">IE9-win7-64bit</a>、<a title="IE9-32bit" href="/static/IE9-Windows7-32bit.exe">IE9-win7-32bit</a>浏览器进行访问。 <a href="###" title="关闭提示" onclick="closeBrowserTip()" id="close-browser-tip">×</a>
+</div>
+<div id="browser-tip2">
+    啊哦~检测到您浏览器文档模式为IE<span id="documentMode"></span>，可能会导致有些功能无法正常使用，请手动更改浏览器文档模式（<span style="color: #ff0000">按F12</span>）或使用史上最强的<a title="点击下载最新浏览器" href="/static/chrome_installer.exe">浏览器</a>进行访问。 <a href="###" title="关闭提示" onclick="closeBrowserTip2()" id="close-browser-tip2">×</a>
+</div>
+<script>
+    var documentMode = document.documentMode;
+    var isIE = (function(){
+        var v = 3,
+                div = document.createElement('div'),
+                all = div.getElementsByTagName('i');
+
+        while (
+                div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+                        all[0]
+                );
+
+        return v > 4 ? v : undefined;
+    }());
+
+    if(isIE == 6 || isIE == 7) {
+        document.getElementById('browser-tip').style.display = 'block';
+    }else{
+        if(documentMode < 8){
+            document.getElementById('documentMode').innerHTML = documentMode;
+            document.getElementById('browser-tip2').style.display = 'block';
+        }
+    }
+
+    function closeBrowserTip() {
+        document.getElementById('browser-tip').style.display = 'none';
+    }
+    function closeBrowserTip2() {
+        document.getElementById('browser-tip2').style.display = 'none';
+    }
+
+</script>
